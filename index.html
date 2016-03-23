@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="todoList">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/foundation.min.css"/>
+    <title></title>
+</head>
+<body style="padding:10px;">
+<input type="text" ng-model="data.msg"/>
+
+<div ng-show="1==1" class="{{data.msg}}">我是一个{{data.msg}}</div>
+
+<div ng-controller="TaskController">
+    <input type="text" ng-model="task">
+    <button ng-click="add()">add</button>
+
+    <h4 ng-hide="tasks.length===0">任务列表</h4>
+    <h4 ng-if="tasks.length <= 2">
+        推荐使用ng-if
+        原因：使用ng-hide，不管如何，都会先在elements中生成h4,而ng-if不会
+    </h4>
+    <ul>
+        <li ng-repeat="item in tasks track by $index">
+            {{item}}
+            <button ng-click="tasks.splice($index, 1)">delete</button>
+        </li>
+    </ul>
+</div>
+
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module('todoList', [])
+    .controller('TaskController', function($scope) {
+        $scope.task = '123';
+        $scope.tasks = [];
+        $scope.add = function () {
+            $scope.tasks.push($scope.task);
+        };
+    });
+</script>
+</html>

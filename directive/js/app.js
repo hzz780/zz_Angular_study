@@ -16,6 +16,8 @@ app.directive('leave',function(){
 	}
 })
 
+// 如果采取驼峰写法 helloWorld 
+// 那么在引入的时候可以可以使用 <hello-world></hello-world>的方式引入
 app.directive('hello',function(){
 	var el = '<div><input ng-model="txt"></div><div>{{txt}}</div>';
 	// 没有搞清楚为什么极客学院为什么给出这样一段代码

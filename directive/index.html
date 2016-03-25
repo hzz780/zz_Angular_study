@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>directive</title>
+	<link rel="stylesheet" href="css/foundation.css">
+</head>
+<body>
+	<div ng-app="app">
+		<!-- <div enter leave>I,m here</div> -->
+		<hello></hello>
+        <world></world>
+
+        <div ng-controller="AppController">
+            <div enter="loadMoreData()">I'm here</div>
+            <div enter="deleteData()">I'm here delete</div>
+        </div>
+
+
+        <name hzz pql love>words1</name>
+        <br>
+        <name hzz love pql>words2</name>
+        <br>
+        <name hzz pql>words3</name>
+    
+        <div enter3rd>elements</div>
+	</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+</html>

@@ -89,6 +89,7 @@ app.directive('name', function () {
 		scope: {}, // 每次渲染时scope 为空
 		controller: function ($scope) {
 			$scope.words = [];
+			$scope.showName = 'hzz';
 			this.addHzz = function () {
 				$scope.words.push('Hzz');
 			};
